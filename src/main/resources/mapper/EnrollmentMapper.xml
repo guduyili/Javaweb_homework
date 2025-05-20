@@ -14,6 +14,9 @@
                  JOIN teacher t ON e.teacher_id = t.teacher_id
         WHERE e.student_id = #{studentId}
     </select>
+    <select id="selectAll" resultType="com.studentcourse.sms.entity.Enrollment">
+        select * from enrollment
+    </select>
 
     <insert id="insert" parameterType="Enrollment">
         INSERT INTO enrollment (

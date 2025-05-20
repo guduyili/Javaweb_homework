@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public interface EnrollmentService {
+
+    List<Enrollment> getAllEnrollments();
     List<EnrollmentVO> getEnrollmentsByStudent(String studentId);
     int addEnrollment(Enrollment enrollment);
     int updateScore(String enrollmentId, Double score);

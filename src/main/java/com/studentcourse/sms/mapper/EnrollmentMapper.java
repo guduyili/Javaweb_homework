@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Mapper
 public interface EnrollmentMapper {
+    List<Enrollment> selectAll();
     List<EnrollmentVO> selectByStudentId(String studentId);
     int insert(Enrollment enrollment);
     int updateScore(Map<String, Object> params);

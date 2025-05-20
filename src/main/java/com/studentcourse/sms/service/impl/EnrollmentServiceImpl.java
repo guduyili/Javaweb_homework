@@ -16,6 +16,12 @@ public class EnrollmentServiceImpl implements EnrollmentService {
     private EnrollmentMapper enrollmentMapper;
 
     @Override
+    public List<Enrollment> getAllEnrollments() {
+        return enrollmentMapper.selectAll();
+
+    }
+
+    @Override
     public List<EnrollmentVO> getEnrollmentsByStudent(String studentId) {
         return enrollmentMapper.selectByStudentId(studentId);
     }
