@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.studentcourse.sms.mapper.StudentMapper">
+    <select id="selectAll" resultType="Student">
+        SELECT * FROM student
+    </select>
+
+    <select id="selectById" resultType="Student">
+        SELECT * FROM student WHERE student_id = #{studentId}
+    </select>
+
+    <insert id="insert" parameterType="Student">
+        INSERT INTO student (student_id, name, department, major, grade, gender, phone)
+        VALUES (#{studentId}, #{name}, #{department}, #{major}, #{grade}, #{gender}, #{phone})
+    </insert>
+
+    <update id="update" parameterType="Student">
+        UPDATE student
+        SET name = #{name},
+            department = #{department},
+            major = #{major},
+            grade = #{grade},
+            gender = #{gender},
+            phone = #{phone},
+            update_time = NOW()
+        WHERE student_id = #{studentId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM student WHERE student_id = #{studentId}
+    </delete>
+</mapper>
