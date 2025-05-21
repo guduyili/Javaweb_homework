@@ -33,9 +33,10 @@ public class StudentController {
         return Result.success(count);
     }
 
-    @PutMapping
+    @PutMapping("/{studentId}")
     public Result<Integer> updateStudent(@RequestBody Student student) {
         int count = studentService.updateStudent(student);
+        System.out.println("接收到学生数据：" + student);
         return Result.success(count);
     }
 

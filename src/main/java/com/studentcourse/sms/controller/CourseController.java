@@ -34,7 +34,7 @@ public class CourseController {
         return Result.success(count);
     }
 
-    @PutMapping
+    @PutMapping("/{courseId}")
     public Result<Integer> updateCourse(@RequestBody Course course){
         int count = courseService.updateCourse(course);
         return Result.success(count);
