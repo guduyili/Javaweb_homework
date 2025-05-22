@@ -7,6 +7,7 @@ import java.util.Date;
 public class Enrollment {
     private String enrollmentId;
     private String studentId;
+    private String studentName;
     private String courseId;
     private String teacherId;
     private Integer year;

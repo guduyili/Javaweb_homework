@@ -21,11 +21,11 @@
     <insert id="insert" parameterType="Enrollment">
         INSERT INTO enrollment (
             enrollment_id, student_id, course_id, teacher_id,
-            year, term, status
+            year, term, status, student_name
         )
         VALUES (
                    UUID(), #{studentId}, #{courseId}, #{teacherId},
-                   #{year}, #{term}, #{status}
+                   #{year}, #{term}, #{status}, #{studentName}
                )
     </insert>
 
